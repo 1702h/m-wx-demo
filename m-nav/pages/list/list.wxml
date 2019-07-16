@@ -1,0 +1,29 @@
+<!--pages/list/list.wxml-->
+<view>
+  <view 
+    wx:for="{{navTitle}}"
+    wx:key="{{index}}" 
+    wx:for-index="i"
+    wx:for-item="myItem"
+    data-tempindex="{{i}}"
+    bindtap="handleNavClick" >
+    <button class="m-nav-btn {{currentId === i ? 'active':''}}">{{myItem.title}}</button>
+  </view>
+  <view
+    wx:for="{{currentList}}"
+    wx:key="{{index}}"
+    wx:for-index="i"
+    wx:for-item="myItem"
+    data-tempindex="{{i}}"
+    >
+    <text class="m-list-title">{{myItem.title}}</text>
+    <view
+      wx:for="{{myItem.list}}"
+      wx:key="{{index}}"
+      wx:for-item="list"
+    >
+      <image src="{{list.image}}"/>
+      <text>{{list.title}}</text>
+    </view>
+  </view>
+</view>

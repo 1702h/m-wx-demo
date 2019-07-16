@@ -16,14 +16,18 @@ Page({
    */
   onLoad: function (options) {
     wx.request({
-      url: 'http://192.168.2.196:8888/nav.json',
+      url: 'http://192.168.2.196:8888/wx/list',
+      method: 'get',
       success:(res) => {
         console.log(res)
-        this.setData({
-          navTitle: res.data.navtitle,
-          navData: res.data.navdata,
-          currentList: res.data.navdata[0].content
-        })
+        if (res.data.code === 200) {
+          let data = res.data.data
+          this.setData({
+            navTitle: data.navtitle,
+            navData: data.navdata,
+            currentList: data.navdata[0].content
+          })
+        }
       }
     })
   },

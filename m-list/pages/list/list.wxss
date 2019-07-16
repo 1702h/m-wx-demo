@@ -1,0 +1,6 @@
+/* pages/list/list.wxss */
+.m-btn{background: #dddddd;}
+.m-btn.active{background: #f66f0c;}
+.m-list-item{margin: 20px 0 50px;}
+.m-list-title{font-size: 36px;color: #f66f0c;}
+.m-list-text{display: block;text-align: center;color: #999999;}

@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    currentId: 0,
+    currentIndex: 0,
     navTitle: [],
     navData: [],
     currentList: []
@@ -17,7 +17,6 @@ Page({
   onLoad: function (options) {
     wx.request({
       url: 'http://localhost:8888/wx/list',
-      method: 'get',
       success:(res) => {
         console.log(res)
         if (res.data.code === 200) {
@@ -33,10 +32,10 @@ Page({
   },
   handleNavClick(e) {
     console.log(e)
-    let { tempindex } = e.currentTarget.dataset
+    let {tempIndex} = e.currentTarget.dataset
     this.setData({
-      currentId: tempindex,
-      currentList: this.data.navData[tempindex].content
+      currentIndex: tempIndex,
+      currentList: this.data.navData[tempIndex].content
     })
   },
 

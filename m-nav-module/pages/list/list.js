@@ -16,7 +16,7 @@ Page({
    */
   onLoad: function (options) {
     wx.request({
-      url: 'http://192.168.2.196:8888/wx/list',
+      url: 'http://localhost:8888/wx/list',
       method: 'get',
       success:(res) => {
         console.log(res)

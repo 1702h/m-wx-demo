@@ -1,11 +1,11 @@
 {
   "pages": [
-    "pages/list/list"
+    "pages/list/list" 
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "1702H",
+    "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json"

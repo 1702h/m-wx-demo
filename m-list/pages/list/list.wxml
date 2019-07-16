@@ -1,22 +1,6 @@
-<view
-  wx:for="{{navTitle}}"
-  wx:key="{{index}}"
-  wx:for-index="i"
-  wx:for-item="myItem"
-  data-temp-index="{{i}}"
-  bind:tap="handleNavClick">
-  <button class="m-btn {{currentIndex === i ? 'active':''}}">{{myItem.title}}</button>
-</view>
-<view
-  wx:for="{{currentList}}"
-  wx:key="{{index}}">
-  <text class="m-list-title">{{item.title}}</text>
-  <view
-    wx:for="{{item.list}}"
-    wx:key="{{index}}">
-    <view class="m-list-item">
-      <image src="{{item.image}}"/>
-      <text class="m-list-text">{{item.title}}</text>
-    </view>
-  </view>
-</view>
+<navItem 
+  navTitle="{{navTitle}}" 
+  currentIndex="{{currentIndex}}"
+  bindHandleNavClickFromComponent="handleNavClickFromComponent"
+  ></navItem>
+<listItem currentList="{{currentList}}"></listItem>

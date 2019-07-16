@@ -39,6 +39,16 @@ Page({
     })
   },
 
+  handleNavClickFromComponent({detail}) {
+    console.log(detail.tempIndex)
+    let tempIndex = detail.tempIndex
+    this.setData({
+      currentIndex: tempIndex,
+      currentList: this.data.navData[tempIndex].content
+    })
+  },
+
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

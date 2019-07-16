@@ -1,0 +1,13 @@
+<view
+  wx:for="{{currentList}}"
+  wx:key="{{index}}">
+  <text class="m-list-title">{{item.title}}</text>
+  <view
+    wx:for="{{item.list}}"
+    wx:key="{{index}}">
+    <view class="m-list-item">
+      <image src="{{item.image}}"/>
+      <text class="m-list-text">{{item.title}}</text>
+    </view>
+  </view>
+</view>

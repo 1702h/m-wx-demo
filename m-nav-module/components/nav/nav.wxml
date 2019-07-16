@@ -1,0 +1,9 @@
+  <view 
+    wx:for="{{navTitle}}"
+    wx:key="{{index}}" 
+    wx:for-index="i"
+    wx:for-item="myItem"
+    data-tempindex="{{i}}"
+    bindtap="handleNavClick2" >
+    <button class="m-nav-btn {{currentId === i ? 'active':''}}">{{myItem.title}}</button>
+  </view>

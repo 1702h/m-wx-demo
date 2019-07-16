@@ -1,0 +1,20 @@
+  <view
+    wx:for="{{currentList}}"
+    wx:key="{{index}}"
+    wx:for-index="i"
+    wx:for-item="myItem"
+    data-tempindex="{{i}}"
+    >
+    <text class="m-list-title">{{myItem.title}}</text>
+    <view
+      wx:for="{{myItem.list}}"
+      wx:key="{{index}}"
+      wx:for-item="list"
+    >
+      <view class="m-list-item-wrap">
+        <image src="{{list.image}}"/>
+        <text class="m-list-item-title">{{list.title}}</text>
+      </view>
+
+    </view>
+  </view>

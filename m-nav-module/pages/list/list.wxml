@@ -1,0 +1,5 @@
+<!--pages/list/list.wxml-->
+<view>
+  <navItem navTitle="{{navTitle}}" currentId="{{currentId}}" bindHandleNavClickFromComponent="handleNavClickFromComponent"></navItem>
+  <listItem currentList="{{currentList}}"></listItem>
+</view>

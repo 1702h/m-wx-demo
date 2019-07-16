@@ -1,0 +1,4 @@
+/* components/nav/nav.wxss */
+
+.m-nav-btn{}
+.m-nav-btn.active{background: #f66f0c;}

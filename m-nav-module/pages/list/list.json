@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "navItem": "../../components/nav/nav",
+    "listItem": "../../components/listItem/item"
+  }
+}

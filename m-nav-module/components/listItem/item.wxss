@@ -1,0 +1,5 @@
+/* components/listItem/item.wxss */
+
+.m-list-item-wrap{margin: 20px 0 50px;}
+.m-list-title{font-size: 36px;color: #f66f0c;}
+.m-list-item-title{display: block; text-align: center;color: #333333;}

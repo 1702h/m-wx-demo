@@ -6,6 +6,7 @@
         <text class="m-scroll-item-text">{{item.name}}</text>
       </view>
     </view>
+    <view class="m-list-item-empty"></view>
   </scroll-view>
   <view class="m-nav">
     <view wx:for="{{list}}" wx:key="{{index}}" data-key="{{item.key}}" bindtap="handleNav">

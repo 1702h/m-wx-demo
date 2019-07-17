@@ -48,7 +48,7 @@ Page({
     let scrollTop = e.detail.scrollTop
     let {listItemTops} = this.data
     for (let i = 0; i < listItemTops.length; i++) {
-      if (scrollTop >= listItemTops[i]) {
+      if (scrollTop >= listItemTops[i] && scrollTop < listItemTops[i + 1]) {
         this.setData({
           currentIndex: i
         })

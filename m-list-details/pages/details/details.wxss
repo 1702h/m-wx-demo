@@ -1,0 +1,2 @@
+/* pages/details/details.wxss */
+.m-detail{text-align: center;font-size: 34px;color: #f66f0c;}

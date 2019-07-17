@@ -1,0 +1,6 @@
+<view>
+  <view class="m-detail">详情</view>
+  <view>姓名：{{detail.name}}</view>
+  <view>地址：{{detail.address}}</view>
+  <view>邮箱：{{detail.email}}</view>
+</view>

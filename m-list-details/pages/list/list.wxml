@@ -1,0 +1,7 @@
+<scroll-view class="m-scroll-view" scroll-y bindscrolltolower="handleScrollToEnd">
+  <view wx:for="{{list}}" wx:key="{{index}}" class="m-list-item-wrap">
+    <text class="m-list-item">姓名：{{item.name}}</text>
+    <button data-id="{{index}}" bindtap="handleDetail">详情</button>
+    <navigator url="/pages/details/details?id={{index}}" class="m-list-navigator">详情2</navigator>
+  </view>
+</scroll-view>

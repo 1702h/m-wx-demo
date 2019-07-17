@@ -1,10 +1,5 @@
 <view class="m-wrap">
-<scroll-view 
-  class="m-scroll-view" 
-  scroll-y 
-  scroll-into-view="{{currentKey}}" 
-  scroll-with-animation 
-  bindscroll="handleScroll">
+  <scroll-view class="m-scroll-view" scroll-y scroll-into-view="{{currentKey}}" scroll-with-animation bindscroll="handleScroll">
     <view wx:for="{{list}}" wx:key="{{index}}" id="{{item.key}}" class="js-list-item">
       <text class="m-scroll-item-title">{{item.key}}</text>
       <view wx:for="{{item.row}}" wx:key="{{index}}">

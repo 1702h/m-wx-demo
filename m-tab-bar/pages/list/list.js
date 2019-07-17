@@ -44,6 +44,7 @@ Page({
     })
   },
   handleScroll(e) {
+    console.log(e)
     let scrollTop = e.detail.scrollTop
     let {listItemTops} = this.data
     for (let i = 0; i < listItemTops.length; i++) {
@@ -53,7 +54,6 @@ Page({
         })
       }
     }
-
   },
 
   handleNav(e) {
@@ -67,14 +67,14 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    console.log('show')
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    console.log('hide')
   },
 
   /**

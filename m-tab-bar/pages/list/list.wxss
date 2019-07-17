@@ -1,7 +1,10 @@
 /* pages/list/list.wxss */
+page{
+  height: 100%;
+}
 .m-wrap{height: 100%;}
 .m-nav{position: fixed;top: 20px;right: 0;height: 100%;}
-.m-nav-text{color: #333333}
+.m-nav-text{color: #333333;font-size: 16px;}
 .m-nav-text.active{color: #f66f0c;}
 .m-scroll-view{height: 100%;}
 .m-scroll-item-title{color: #000000;font-size: 36px;font-weight: bolder;}

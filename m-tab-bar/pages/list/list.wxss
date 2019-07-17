@@ -4,3 +4,5 @@
 .m-nav-text{color: #333333}
 .m-nav-text.active{color: #f66f0c;}
 .m-scroll-view{height: 100%;}
+.m-scroll-item-title{color: #000000;font-size: 36px;font-weight: bolder;}
+.m-scroll-item-text{line-height: 50px; color: #333333;font-size: 20px;}

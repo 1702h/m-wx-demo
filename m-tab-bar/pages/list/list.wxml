@@ -6,9 +6,9 @@
   scroll-with-animation 
   bindscroll="handleScroll">
     <view wx:for="{{list}}" wx:key="{{index}}" id="{{item.key}}" class="js-list-item">
-      <text>{{item.key}}</text>
+      <text class="m-scroll-item-title">{{item.key}}</text>
       <view wx:for="{{item.row}}" wx:key="{{index}}">
-        <text>{{item.name}}</text>
+        <text class="m-scroll-item-text">{{item.name}}</text>
       </view>
     </view>
   </scroll-view>

@@ -23,20 +23,23 @@ Page({
    */
   onReady: function () {
     wx.request({
-      url: "https://www.easy-mock.com/mock/5ceb8bac32cfe337f96fe748/example/car",
+      url: "http://localhost:8888/wx/mail_list",
       success: (res) => {
         console.log(res)
-        this.setData({
-          list: res.data.data.items
-        }, () => {
-          const query = wx.createSelectorQuery();
-          query.selectAll('.js-list-item').boundingClientRect((res) => {
-            console.log(res)
-            this.setData({
-              listItemTops: res.map(item => item.top)
-            })
-          }).exec()
-        })
+        if (res.data.code === 200) {
+          let data = res.data.data
+          this.setData({
+            list: data.items
+          }, () => {
+            const query = wx.createSelectorQuery();
+            query.selectAll('.js-list-item').boundingClientRect((res) => {
+              console.log(res)
+              this.setData({
+                listItemTops: res.map(item => item.top)
+              })
+            }).exec()
+          })
+        }
       }
     })
   },

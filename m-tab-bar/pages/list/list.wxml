@@ -1,2 +1,20 @@
-<!--pages/list/list.wxml-->
-<text>pages/list/list.wxml</text>
+<view class="m-wrap">
+<scroll-view 
+  class="m-scroll-view" 
+  scroll-y 
+  scroll-into-view="{{currentKey}}" 
+  scroll-with-animation 
+  bindscroll="handleScroll">
+    <view wx:for="{{list}}" wx:key="{{index}}" id="{{item.key}}" class="js-list-item">
+      <text>{{item.key}}</text>
+      <view wx:for="{{item.row}}" wx:key="{{index}}">
+        <text>{{item.name}}</text>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="m-nav">
+    <view wx:for="{{list}}" wx:key="{{index}}" data-key="{{item.key}}" bindtap="handleNav">
+      <text class="m-nav-text {{currentIndex === index ? 'active': ''}}">{{item.key}}</text>
+    </view>
+  </view>
+</view>

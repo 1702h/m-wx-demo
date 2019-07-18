@@ -18,7 +18,8 @@
       class="m-list-item"
     >
       <image src="{{item.bigImageUrl}}" mode="aspectFit" class="m-image"/>
-      <text class="m-list-text">{{item.spuName}}</text>
+      <view class="m-list-text">{{item.spuName}}</view>
+      <view class="m-list-text">{{item.currentPrice}}</view>
       <view wx:if="{{ordered[item.spuId].count}}">
         <button data-item="{{item}}" bindtap="handleListItemSub">-</button>
         <text>{{ordered[item.spuId].count}}</text>

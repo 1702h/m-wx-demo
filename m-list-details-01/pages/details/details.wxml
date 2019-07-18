@@ -1,0 +1,3 @@
+<!--pages/details/details.wxml-->
+<text>{{item.name}}</text>
+<text>{{item.email}}</text>

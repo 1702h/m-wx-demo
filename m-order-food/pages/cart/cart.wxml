@@ -1,2 +1,17 @@
 <!--pages/cart/cart.wxml-->
-<text>购物车</text>
+<checkbox-group bindchange="handleCheckboxChange">
+  <label class="checkbox" wx:for="{{orderedArr}}" wx:key="{{index}}">
+    <checkbox value="{{item.spuId}}" checked="{{item.checked}}"/>{{item.spuName}}
+    <view>
+      <text>单价：{{item.currentPrice}}</text>
+      <text>数量：{{item.count}}</text>
+    </view>    
+  </label>
+</checkbox-group>
+<checkbox-group bindchange="handleSelectAll">
+  <checkbox checked="{{selectAll}}">全选</checkbox>
+</checkbox-group>
+
+<view>
+<text>总数：{{totalCount}} 总价：{{totalPrice}}</text>
+</view>

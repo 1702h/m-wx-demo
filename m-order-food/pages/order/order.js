@@ -41,7 +41,6 @@ Page({
     })
   },
   handleListItemSub(e) {
-    console.log(e)
     let { item } = e.currentTarget.dataset
     let { currentIndex, ordered } = this.data
     console.log(item)
@@ -51,16 +50,13 @@ Page({
       ordered[item.spuId] = item
       ordered[item.spuId].count = 0
     }
-
-    console.log(ordered)
-
+    app.globalData.ordered = ordered
     this.setData({
       ordered
     })
   },
 
   handleListItemAdd(e) {
-    console.log(e)
     let { item } = e.currentTarget.dataset
     let {currentIndex, ordered} = this.data
     if (ordered[item.spuId]) {
@@ -68,11 +64,12 @@ Page({
     } else {
       ordered[item.spuId] = item
       ordered[item.spuId].count = 1
+      ordered[item.spuId].checked = true
     }
-    console.log(ordered)
+    app.globalData.ordered = ordered
     this.setData({
       ordered
-    })
+    })    
   },
 
   /**

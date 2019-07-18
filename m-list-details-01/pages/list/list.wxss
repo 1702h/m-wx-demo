@@ -1,0 +1,4 @@
+/* pages/list/list.wxss */
+page{height: 100%;}
+.m-scroll{height: 100%;}
+.m-list-item{height: 100px;}

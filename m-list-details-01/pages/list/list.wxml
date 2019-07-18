@@ -1,0 +1,10 @@
+<scroll-view scroll-y class="m-scroll" bindscrolltolower="handleScrollToLower">
+  <view
+    wx:for="{{list}}"
+    wx:key="{{index}}"
+    class="m-list-item"
+  >
+    <text class="m-list-text">{{item.name}}</text>
+    <button size="mini" data-item-index="{{index}}" bindtap="handleJumpToDetails">详情</button>
+  </view>
+</scroll-view>

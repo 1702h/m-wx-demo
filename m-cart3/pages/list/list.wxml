@@ -1,0 +1,31 @@
+<view class="m-wrap">
+  <scroll-view class="m-nav" scroll-y>
+    <view
+      wx:for="{{categoryList}}"
+      wx:key="{{index}}"
+      data-index="{{index}}"
+      bindtap="handleNav"
+      >
+      <text 
+        class="m-nav-item {{currentIndex === index ? 'active' : ''}}"
+      >{{item.categoryName}}</text>
+    </view>
+  </scroll-view>
+  <scroll-view class="m-list" scroll-y >
+    <view
+      wx:for="{{currentFoodList}}"
+      wx:key="{{index}}"
+      class="m-list-item"
+    >
+      <image src="{{item.bigImageUrl}}" mode="aspectFit" class="m-image"/>
+      <view class="m-list-text">{{item.spuName}}</view>
+      <view class="m-list-text">{{item.currentPrice}}</view>
+      <view wx:if="{{ordered[item.spuId].count}}">
+        <button data-item="{{item}}" bindtap="handleListItemSub">-</button>
+        <text>{{ordered[item.spuId].count}}</text>
+      </view>
+      <button data-item="{{item}}" bindtap="handleListItemAdd">+</button>
+    </view>
+  </scroll-view>
+</view>
+

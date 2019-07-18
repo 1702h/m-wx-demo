@@ -32,7 +32,6 @@ Page({
   },
 
   handleNav(e) {
-    console.log(e)
     let {index} = e.currentTarget.dataset
     let {categoryList} = this.data
     this.setData({
@@ -40,6 +39,7 @@ Page({
       currentFoodList: categoryList[index].spuList
     })
   },
+
   handleListItemSub(e) {
     let { item } = e.currentTarget.dataset
     let { currentIndex, ordered } = this.data
@@ -61,6 +61,7 @@ Page({
     let {currentIndex, ordered} = this.data
     if (ordered[item.spuId]) {
       ordered[item.spuId].count = ordered[item.spuId].count + 1
+      ordered[item.spuId].checked = true
     } else {
       ordered[item.spuId] = item
       ordered[item.spuId].count = 1

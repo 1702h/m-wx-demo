@@ -1,7 +1,8 @@
 <!--pages/cart/cart.wxml-->
 <checkbox-group bindchange="handleCheckboxChange">
   <label class="checkbox" wx:for="{{orderedArr}}" wx:key="{{index}}">
-    <checkbox value="{{item.spuId}}" checked="{{item.checked}}"/>{{item.spuName}}
+    <checkbox value="{{item.spuId}}" checked="{{item.checked}}"/>
+    {{item.spuName}}
     <view>
       <text>单价：{{item.currentPrice}}</text>
       <text>数量：{{item.count}}</text>

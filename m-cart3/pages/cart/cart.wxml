@@ -1,2 +1,24 @@
 <!--pages/cart/cart.wxml-->
-<text>pages/cart/cart.wxml</text>
+<checkbox-group bindchange="handleChangeCheckbox">
+  <view
+    wx:for="{{orderedArr}}"
+    wx:key="{{index}}"
+    >
+    <label>
+      <checkbox value="{{item.spuId}}" checked="{{item.checked}}"></checkbox>
+      <text>菜名：{{item.spuName}}</text>
+      <view>
+      价格：{{item.currentPrice}}
+      <button disabled="{{item.subBtnDistabled}}" data-index="{{index}}" bindtap="handleSub">-</button>
+      数量：{{item.count}} 
+      <button data-index="{{index}}" bindtap="handleAdd">+</button>
+      </view>
+    </label>
+  </view>
+</checkbox-group>
+<view>
+总价：{{totalPrice}} 总量： {{totalCount}}
+</view>
+<checkbox-group bindchange="handleSelectAll">
+  <checkbox checked="{{selectAll}}">全选</checkbox>
+</checkbox-group>

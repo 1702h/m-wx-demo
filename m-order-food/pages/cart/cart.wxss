@@ -1,1 +1,8 @@
 /* pages/cart/cart.wxss */
+.m-item-wrap{display: block; margin: 20px 0;}
+.m-item-desc{display: flex;}
+.m-price{color: red;font-size: 26px;}
+
+.m-total{margin: 20px 0 0;}
+.m-total-count{color:#333333;font-size: 30px;font-weight: bold;}
+.m-total-price{color: red;font-size: 30px;font-weight: bold;}

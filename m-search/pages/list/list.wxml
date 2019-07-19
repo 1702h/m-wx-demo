@@ -1,0 +1,34 @@
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <view wx:for="{{imgUrls}}" wx:key="{{index}}">
+    <swiper-item>
+      <image src="{{item}}" class="m-slide-image" />
+    </swiper-item>
+  </view>
+</swiper>
+
+<view>
+  <input 
+    type="text" 
+    value="{{searchValue}}" 
+    bindinput="handleInputChange" 
+    placeholder="请输入搜索内容" 
+    class="m-input"></input>
+  <button bindtap="handleSearchBtn">搜索</button>
+</view>
+<!-- <view
+  wx:for="{{searchResult}}"
+  wx:key="{{index}}"
+  >
+  <navigator url="/pages/details/details?value={{item}}">
+    {{item}}
+  </navigator>
+</view> -->
+
+<view
+  wx:for="{{list}}"
+  wx:key="{{index}}"
+  class="m-list-item"
+>
+  <image src="{{item.topicPic}}"/>
+  <text class="m-list-item-text">{{item.topicTitle}}</text>
+</view>

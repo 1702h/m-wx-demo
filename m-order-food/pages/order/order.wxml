@@ -20,11 +20,13 @@
       <image src="{{item.bigImageUrl}}" mode="aspectFit" class="m-image"/>
       <view class="m-list-text">{{item.spuName}}</view>
       <view class="m-list-text">{{item.currentPrice}}</view>
-      <view wx:if="{{ordered[item.spuId].count}}">
-        <button data-item="{{item}}" bindtap="handleListItemSub">-</button>
-        <text>{{ordered[item.spuId].count}}</text>
+      <view class="m-list-add-to-cart">
+        <block wx:if="{{ordered[item.spuId].count}}">
+          <button data-item="{{item}}" size="mini" bindtap="handleListItemSub">-</button>
+          <text class="m-list-count">{{ordered[item.spuId].count}}</text>
+        </block>
+        <button data-item="{{item}}" size="mini" bindtap="handleListItemAdd">+</button>
       </view>
-      <button data-item="{{item}}" bindtap="handleListItemAdd">+</button>
     </view>
   </scroll-view>
 </view>

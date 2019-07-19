@@ -1,0 +1,23 @@
+<swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{5000}}" duration="{{3000}}">
+  <swiper-item>
+    <image src='https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640' class="m-image"></image>
+  </swiper-item>
+  <swiper-item>
+    <image src='https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640' class="m-image"></image>
+  </swiper-item>
+  <swiper-item>
+    <image src='https://images.unsplash.com/photo-1551446591-142875a901a1?w=640' class="m-image"></image>
+  </swiper-item>    
+</swiper>
+<view>
+<input type="text" value="{{searchValue}}" bindinput="handleInput" placeholder="请输入搜索内容" class="m-input" />
+<button bindtap="handleSearch">搜索</button>
+</view>
+
+<view 
+  wx:for="{{list}}"
+  wx:key="{{index}}"
+>
+<image src="{{item.topicPic}}"/>
+{{item.topicTitle}}
+</view>

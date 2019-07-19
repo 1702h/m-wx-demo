@@ -6,5 +6,7 @@ page{width: 100%; height: 100%;}
 .m-nav-item{display: inline-block;width: 100px; color: #333333;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
 .m-nav-item.active{color: #f66f0c;}
 .m-list-item{text-align: center;}
+.m-list-add-to-cart{display: flex;}
+.m-list-count{color: #333333;font-size: 24px;font-weight: bold;}
 .m-list-text{display: block;margin: 0 0 10px 0;color: #666666; text-align: center;}
 .m-image{width: 150px;}

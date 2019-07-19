@@ -9,7 +9,7 @@ Page({
     orderedArr: [],
     totalCount: '',
     totalPrice: '',
-    selectAll: true
+    selectAll: true,
   },
 
   /**
@@ -33,6 +33,11 @@ Page({
     let ordered = app.globalData.ordered
     let orderedArr = []
     for (let item in ordered) {
+      if (ordered[item].count <= 1) {
+        ordered[item].subBtnDisabled = true
+      } else {
+        ordered[item].subBtnDisabled = false
+      }
       orderedArr.push(ordered[item])
     }    
     this.setData({
@@ -92,6 +97,49 @@ Page({
       selectAll: checkedCount === orderedArr.length
     })    
     this.priceAndCount()
+  },
+
+  handleSub(e) {
+    let { index } = e.currentTarget.dataset
+    let { orderedArr } = this.data
+
+    orderedArr[index].count = orderedArr[index].count - 1
+    if (orderedArr[index].count <= 1) {
+      orderedArr[index].subBtnDisabled = true
+    } else {
+      orderedArr[index].subBtnDisabled = false
+    }    
+    this.setData({
+      orderedArr
+    })
+    this.priceAndCount()
+  },
+
+  handleAdd(e) {
+    let {index} = e.currentTarget.dataset
+    let {orderedArr} = this.data
+    orderedArr[index].count = orderedArr[index].count + 1
+    orderedArr[index].subBtnDisabled = false
+    this.setData({
+      orderedArr
+    })
+    this.priceAndCount()
+  },
+
+  handleBuy() {
+    wx.requestPayment({
+      timeStamp: '',
+      nonceStr: '',
+      package: '',
+      signType: 'MD5',
+      paySign: '',
+      success(res) { 
+        console.log(res)
+      },
+      fail(res) {
+        console.log(res)
+      }
+    })
   },
 
   /**

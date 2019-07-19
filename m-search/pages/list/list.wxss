@@ -1,0 +1,6 @@
+/* pages/list/list.wxss */
+.m-slide-image{width: 100%;}
+.m-input{margin: 10px 2px 10px; border: 1px solid #dddddd;height: 50px;}
+
+.m-list-item{margin: 0  0 20px 0;}
+.m-list-item-text{display: block;text-align: center;font-size: 30px;}

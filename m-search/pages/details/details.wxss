@@ -1,0 +1,3 @@
+/* pages/details/details.wxss */
+.m-list-item{margin: 0  0 20px 0;}
+.m-list-item-text{display: block;text-align: center;font-size: 30px;}

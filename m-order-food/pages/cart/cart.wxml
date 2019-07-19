@@ -1,18 +1,24 @@
 <!--pages/cart/cart.wxml-->
 <checkbox-group bindchange="handleCheckboxChange">
-  <label class="checkbox" wx:for="{{orderedArr}}" wx:key="{{index}}">
+  <label class="m-item-wrap" wx:for="{{orderedArr}}" wx:key="{{index}}">
     <checkbox value="{{item.spuId}}" checked="{{item.checked}}"/>
     {{item.spuName}}
-    <view>
-      <text>单价：{{item.currentPrice}}</text>
+    <view class="m-item-desc">
+      <text class="m-item-price-wrap">单价：<text class="m-price">¥{{item.currentPrice}}</text></text>
+      <button size="mini" disabled="{{item.subBtnDisabled}}" data-index="{{index}}" bindtap="handleSub">-</button>
       <text>数量：{{item.count}}</text>
+      <button size="mini" data-index="{{index}}" bindtap="handleAdd">+</button>
     </view>    
   </label>
 </checkbox-group>
-<checkbox-group bindchange="handleSelectAll">
-  <checkbox checked="{{selectAll}}">全选</checkbox>
-</checkbox-group>
 
-<view>
-<text>总数：{{totalCount}} 总价：{{totalPrice}}</text>
+
+<view class="m-total">
+  <checkbox-group bindchange="handleSelectAll">
+    <checkbox checked="{{selectAll}}">全选</checkbox>
+  </checkbox-group>
+  <text>
+  总数：<text class="m-total-count">{{totalCount}}</text>总价：<text class="m-total-price">¥{{totalPrice}}</text>
+  </text>
 </view>
+<button bindtap="handleBuy">立即支付</button>

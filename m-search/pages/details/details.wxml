@@ -1,0 +1,9 @@
+<!--pages/details/details.wxml-->
+<view
+  wx:for="{{list}}"
+  wx:key="{{index}}"
+  class="m-list-item"
+>
+  <image src="{{item.topicPic}}"/>
+  <text class="m-list-item-text">{{item.topicTitle}}</text>
+</view>

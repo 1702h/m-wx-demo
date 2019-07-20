@@ -2,19 +2,20 @@
 <view
   wx:for="{{formatOrderedArr}}"
   wx:key="{{index}}"
+  wx:for-item="shopItem"
 >
   <checkbox-group data-index="{{index}}" bindchange="handleSelectShop">
-    <checkbox checked="{{item.checked}}" class="m-shop-name" >{{item.categoryName}}</checkbox>
+    <checkbox checked="{{shopItem.checked}}" class="m-shop-name" >{{shopItem.categoryName}}</checkbox>
   </checkbox-group>
   <checkbox-group data-index="{{index}}" bindchange="handleCheckboxChange">
-    <label class="m-item-wrap" wx:for="{{item.list}}" wx:key="{{index}}">
+    <label class="m-item-wrap" wx:for="{{shopItem.list}}" wx:key="{{index}}">
       <checkbox value="{{item.spuId}}" checked="{{item.checked}}"/>
       {{item.spuName}}
       <view class="m-item-desc">
         <text class="m-item-price-wrap">单价：<text class="m-price">¥{{item.currentPrice}}</text></text>
-        <button size="mini" disabled="{{item.subBtnDisabled}}" data-index="{{index}}" bindtap="handleSub">-</button>
+        <button size="mini" data-shop-item-index="{{shopItem.index}}" disabled="{{item.subBtnDisabled}}" data-index="{{index}}" bindtap="handleSub">-</button>
         <text>数量：{{item.count}}</text>
-        <button size="mini" data-index="{{index}}" bindtap="handleAdd">+</button>
+        <button size="mini" data-shop-item-index="{{shopItem.index}}" data-index="{{index}}" bindtap="handleAdd">+</button>
       </view>    
     </label>
   </checkbox-group>  

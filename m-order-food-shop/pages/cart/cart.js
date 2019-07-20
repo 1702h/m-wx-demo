@@ -69,6 +69,7 @@ Page({
             temp.list.push(orderedArr[j])
           }
         }
+        temp.index = formatOrderedArr.length
         formatOrderedArr.push(temp)
       }
     }
@@ -170,28 +171,28 @@ Page({
   },
 
   handleSub(e) {
-    let { index } = e.currentTarget.dataset
-    let { orderedArr } = this.data
+    let { index, shopItemIndex } = e.currentTarget.dataset
+    let { formatOrderedArr } = this.data
 
-    orderedArr[index].count = orderedArr[index].count - 1
-    if (orderedArr[index].count <= 1) {
-      orderedArr[index].subBtnDisabled = true
+    formatOrderedArr[shopItemIndex].list[index].count = formatOrderedArr[shopItemIndex].list[index].count - 1
+    if (formatOrderedArr[shopItemIndex].list[index].count <= 1) {
+      formatOrderedArr[shopItemIndex].list[index].subBtnDisabled = true
     } else {
-      orderedArr[index].subBtnDisabled = false
+      formatOrderedArr[shopItemIndex].list[index].subBtnDisabled = false
     }    
     this.setData({
-      orderedArr
+      formatOrderedArr
     })
     this.priceAndCount()
   },
 
   handleAdd(e) {
-    let {index} = e.currentTarget.dataset
-    let {orderedArr} = this.data
-    orderedArr[index].count = orderedArr[index].count + 1
-    orderedArr[index].subBtnDisabled = false
+    let {index, shopItemIndex} = e.currentTarget.dataset
+    let {formatOrderedArr} = this.data
+    formatOrderedArr[shopItemIndex].list[index].count = formatOrderedArr[shopItemIndex].list[index].count + 1
+    formatOrderedArr[shopItemIndex].list[index].subBtnDisabled = false
     this.setData({
-      orderedArr
+      formatOrderedArr
     })
     this.priceAndCount()
   },

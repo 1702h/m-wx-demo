@@ -1,0 +1,46 @@
+<!--pages/cart/cart.wxml-->
+<view
+  wx:for="{{formatOrderedArr}}"
+  wx:key="{{index}}"
+>
+  <checkbox-group data-index="{{index}}" bindchange="handleSelectShop">
+    <checkbox checked="{{item.checked}}" class="m-shop-name" >{{item.categoryName}}</checkbox>
+  </checkbox-group>
+  <checkbox-group data-index="{{index}}" bindchange="handleCheckboxChange">
+    <label class="m-item-wrap" wx:for="{{item.list}}" wx:key="{{index}}">
+      <checkbox value="{{item.spuId}}" checked="{{item.checked}}"/>
+      {{item.spuName}}
+      <view class="m-item-desc">
+        <text class="m-item-price-wrap">单价：<text class="m-price">¥{{item.currentPrice}}</text></text>
+        <button size="mini" disabled="{{item.subBtnDisabled}}" data-index="{{index}}" bindtap="handleSub">-</button>
+        <text>数量：{{item.count}}</text>
+        <button size="mini" data-index="{{index}}" bindtap="handleAdd">+</button>
+      </view>    
+    </label>
+  </checkbox-group>  
+
+</view>
+
+<!-- <checkbox-group bindchange="handleCheckboxChange">
+  <label class="m-item-wrap" wx:for="{{orderedArr}}" wx:key="{{index}}">
+    <checkbox value="{{item.spuId}}" checked="{{item.checked}}"/>
+    {{item.spuName}}
+    <view class="m-item-desc">
+      <text class="m-item-price-wrap">单价：<text class="m-price">¥{{item.currentPrice}}</text></text>
+      <button size="mini" disabled="{{item.subBtnDisabled}}" data-index="{{index}}" bindtap="handleSub">-</button>
+      <text>数量：{{item.count}}</text>
+      <button size="mini" data-index="{{index}}" bindtap="handleAdd">+</button>
+    </view>    
+  </label>
+</checkbox-group> -->
+
+
+<view class="m-total">
+  <checkbox-group bindchange="handleSelectAll">
+    <checkbox checked="{{selectAll}}">全选</checkbox>
+  </checkbox-group>
+  <text>
+  总数：<text class="m-total-count">{{totalCount}}</text>总价：<text class="m-total-price">¥{{totalPrice}}</text>
+  </text>
+</view>
+<button bindtap="handleBuy">立即支付</button>

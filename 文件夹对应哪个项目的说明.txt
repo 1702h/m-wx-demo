@@ -1,0 +1,6 @@
+m-nav :男装、女装、童装，即tab切换
+m-nav-module、m-list :使用组件，男装、女装、童装，即tab切换
+m-order-food:西少爷点餐，购物车
+m-serach: 搜索，轮播图
+m-list-details：无限加载数据，以及列表跳转到详情
+m-tab-bar:底部导航tabbar，通讯录、里面的数据是汽车

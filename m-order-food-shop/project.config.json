@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -22,13 +22,14 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.7.5",
-	"appid": "touristappid",
-	"projectname": "m-cart",
-	"cloudfunctionTemplateRoot": "",
+	"appid": "wx070cf21c0c8ab9c2",
+	"projectname": "m-order-food",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
-	"scripts": {},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -38,11 +39,8 @@
 			"current": -1,
 			"list": []
 		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
 		"game": {
+			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {

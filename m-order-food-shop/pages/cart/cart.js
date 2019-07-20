@@ -6,11 +6,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    orderedArr: [],
+    orderedArr: [], //所有商品在一个数组中
     totalCount: '',
     totalPrice: '',
     selectAll: true,
-    formatOrderedArr: []
+    formatOrderedArr: []  //格式化后，商品按店铺分层
   },
 
   /**
@@ -44,7 +44,6 @@ Page({
     this.setData({
       orderedArr
     })
-    console.log(orderedArr)
     this.formatData(orderedArr)
     this.priceAndCount()
   },

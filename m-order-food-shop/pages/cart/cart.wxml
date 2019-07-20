@@ -22,20 +22,6 @@
 
 </view>
 
-<!-- <checkbox-group bindchange="handleCheckboxChange">
-  <label class="m-item-wrap" wx:for="{{orderedArr}}" wx:key="{{index}}">
-    <checkbox value="{{item.spuId}}" checked="{{item.checked}}"/>
-    {{item.spuName}}
-    <view class="m-item-desc">
-      <text class="m-item-price-wrap">单价：<text class="m-price">¥{{item.currentPrice}}</text></text>
-      <button size="mini" disabled="{{item.subBtnDisabled}}" data-index="{{index}}" bindtap="handleSub">-</button>
-      <text>数量：{{item.count}}</text>
-      <button size="mini" data-index="{{index}}" bindtap="handleAdd">+</button>
-    </view>    
-  </label>
-</checkbox-group> -->
-
-
 <view class="m-total">
   <checkbox-group bindchange="handleSelectAll">
     <checkbox checked="{{selectAll}}">全选</checkbox>
